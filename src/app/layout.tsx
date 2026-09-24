@@ -5,7 +5,7 @@ import "./globals.css";
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-HKGZ8KHB1W";
 
 export const metadata: Metadata = {
-  title: "Salty Auto | Social Media Automation & Social CRM",
+  title: "My AI Task | Social Media Automation & Social CRM",
   description: "Enterprise Instagram Comment-to-DM, WhatsApp Marketing, and Unified Social CRM for Agencies & Creators.",
 };
 

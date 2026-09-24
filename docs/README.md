@@ -1,6 +1,6 @@
-# Salty Auto Platform Documentation
+# My AI Task Platform Documentation
 
-Welcome to the technical documentation for **Salty Auto**, an enterprise-grade, zero-cost social media automation and messaging engine designed for agencies, business owners, and creators.
+Welcome to the technical documentation for **My AI Task**, an enterprise-grade, zero-cost social media automation and messaging engine designed for agencies, business owners, and creators.
 
 ## Documentation Index
 

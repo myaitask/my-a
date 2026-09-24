@@ -1,7 +1,7 @@
 # System Architecture & Technical Specification
 
 ## Overview
-**Salty Auto** is a multi-tenant, serverless social media automation and messaging platform. It is engineered to operate with zero fixed recurring costs by utilizing tier-1 developer free tiers (Supabase, Meta Cloud APIs, Inngest, Vercel/Next.js) while maintaining enterprise reliability, data isolation, and security.
+**My AI Task** is a multi-tenant, serverless social media automation and messaging platform. It is engineered to operate with zero fixed recurring costs by utilizing tier-1 developer free tiers (Supabase, Meta Cloud APIs, Inngest, Vercel/Next.js) while maintaining enterprise reliability, data isolation, and security.
 
 ---
 
@@ -49,7 +49,7 @@
                                      ▲
                                      │ (Client Dashboard & Live CRM)
       ┌──────────────────────────────┴─────────────────────────────┐
-      │  salty-auto Web Application (Next.js 15 App Router)        │
+      │  my-a Web Application (Next.js 15 App Router)        │
       │  - Rule Builder, CRM Kanban, Analytics, Account Settings   │
       └────────────────────────────────────────────────────────────┘
 ```
@@ -93,9 +93,9 @@ Instagram and WhatsApp strictly monitor API call frequency. Sending 50 DMs in a 
 
 ---
 
-## 5. Dedicated User Portal & Authentication (`auto.saltymediaproduction.com`)
-The subdomain `auto.saltymediaproduction.com` is reserved exclusively for registered agency clients and business owners:
-- **No Marketing Landing**: Marketing pages live on the primary apex domain (`saltymediaproduction.com`). The root path `/` directly renders the Automations Dashboard.
+## 5. Dedicated User Portal & Authentication (`automate.myaitask.com`)
+The subdomain `automate.myaitask.com` is reserved exclusively for registered agency clients and business owners:
+- **No Marketing Landing**: Marketing pages live on the primary apex domain (`www.myaitask.com`). The root path `/` directly renders the Automations Dashboard.
 - **Firebase Authentication Engine**: User identity management is powered 100% by **Firebase Authentication** (`firebase/auth`). Users can sign up and log in via:
   1. Email & Password (`createUserWithEmailAndPassword`, `signInWithEmailAndPassword`)
   2. Google (Gmail) Single Sign-On via popup (`signInWithPopup(auth, googleProvider)`)
@@ -108,11 +108,11 @@ The subdomain `auto.saltymediaproduction.com` is reserved exclusively for regist
 ---
 
 ## 6. Transactional Email Service (Resend)
-Transactional emails across Salty Auto and the Salty Media suite are handled via **Resend**:
-- **Sender Address**: `team@saltymediaproduction.com`
-- **Sender Display Name**: `Salty Media`
-- **Reply-To Address**: `saltymediaproduction@gmail.com`
-- **Format**: `"Salty Media" <team@saltymediaproduction.com>`
+Transactional emails across My AI Task and the My AI Task suite are handled via **Resend**:
+- **Sender Address**: `team@www.myaitask.com`
+- **Sender Display Name**: `My AI Task`
+- **Reply-To Address**: `myaitasks@gmail.com`
+- **Format**: `"My AI Task" <team@www.myaitask.com>`
 - **Email Workflows**:
   - **Agency Welcome**: Sent immediately upon first sign-up / workspace auto-provisioning via `/api/auth/session`.
   - **Lead Conversion Alerts**: Sent when comments or WhatsApp messages trigger keyword conversion rules and are captured into the Social CRM.

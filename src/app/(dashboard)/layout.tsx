@@ -103,7 +103,7 @@ export default function DashboardLayout({
           <Link
             href="/instagram"
             className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 hover:scale-105 transition-transform"
-            title="Salty Auto - Tech Provider v21.0"
+            title="My AI Task - Tech Provider v21.0"
           >
             <Sparkles className="w-6 h-6 text-white" />
           </Link>
@@ -182,7 +182,7 @@ export default function DashboardLayout({
             <Sparkles className="w-4 h-4 text-white" />
           </div>
           <div>
-            <div className="font-bold text-xs text-white tracking-wide">SALTY AUTO</div>
+            <div className="font-bold text-xs text-white tracking-wide">MY AI TASK</div>
             <div className="text-[9px] text-slate-400 font-mono">Mobile Control</div>
           </div>
         </Link>
@@ -212,7 +212,7 @@ export default function DashboardLayout({
           <div className="flex items-center gap-2 text-xs text-slate-400">
             <span>Workspace</span>
             <span className="text-slate-600">/</span>
-            <span className="font-medium text-slate-200">Salty Media Production</span>
+            <span className="font-medium text-slate-200">My AI Task</span>
             <span className="text-slate-600">/</span>
             <span className="text-slate-400">
               {navItems.find((n) => n.isActive)?.fullName || "Automation Suite"}
@@ -223,7 +223,7 @@ export default function DashboardLayout({
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg border border-slate-700/60 bg-slate-800/40 text-xs text-slate-300">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>
-                Ingress Endpoint: <span className="font-mono text-[10px] text-indigo-300">auto.saltymediaproduction.com</span>
+                Ingress Endpoint: <span className="font-mono text-[10px] text-indigo-300">automate.myaitask.com</span>
               </span>
             </div>
           </div>

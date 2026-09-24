@@ -143,12 +143,12 @@ export default function UserAccountPage() {
           key: orderData.keyId,
           amount: orderData.amount,
           currency: orderData.currency,
-          name: "Salty Auto Wallet Top-Up",
+          name: "My AI Task Wallet Top-Up",
           description: `Add ${currencySymbol}${topUpAmount} to automation balance`,
           order_id: orderData.orderId,
           prefill: {
             name: businessForm.contactPerson || "Agency User",
-            email: businessForm.email || "billing@saltymediaproduction.com",
+            email: businessForm.email || "billing@www.myaitask.com",
             contact: businessForm.phone || "9876543210",
           },
           theme: {
@@ -515,7 +515,7 @@ export default function UserAccountPage() {
                     onChange={(e) =>
                       setBusinessForm({ ...businessForm, businessName: e.target.value })
                     }
-                    placeholder="e.g. Salty Media Production"
+                    placeholder="e.g. My AI Task"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
                 </div>
@@ -549,7 +549,7 @@ export default function UserAccountPage() {
                     onChange={(e) =>
                       setBusinessForm({ ...businessForm, email: e.target.value })
                     }
-                    placeholder="e.g. billing@saltymediaproduction.com"
+                    placeholder="e.g. billing@www.myaitask.com"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
                 </div>

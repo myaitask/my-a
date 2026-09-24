@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
             currency: currency.toUpperCase(),
             receipt: `rcpt_${Date.now()}`,
             notes: {
-              purpose: "Salty Auto Wallet Top-Up",
+              purpose: "My AI Task Wallet Top-Up",
             },
           }),
         });

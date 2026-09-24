@@ -93,7 +93,7 @@ export const handleInstagramPostback = inngest.createFunction(
       // Deliver the content
       await step.run("send-gated-content", async () => {
         const appUrl =
-          process.env.NEXT_PUBLIC_APP_URL || "https://auto.saltymediaproduction.com";
+          process.env.NEXT_PUBLIC_APP_URL || "https://automate.myaitask.com";
 
         if (config.buttons && config.buttons.length > 0) {
           const trackedButtons = await Promise.all(

@@ -9,7 +9,7 @@ This document provides the exact developer configuration for **Instagram Comment
 ### Step 1: Create a Business App
 1. Go to [developers.facebook.com](https://developers.facebook.com) > **My Apps** > **Create App**.
 2. Select **Business** as the App Type.
-3. Name the app (e.g. `Salty Auto Automation`).
+3. Name the app (e.g. `My AI Task Automation`).
 4. Link it to your **Meta Business Portfolio** (Business Manager).
 
 ### Step 2: Add Products

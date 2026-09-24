@@ -15,7 +15,7 @@ export default function AuthLayout({
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-indigo-300">
             <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-            <span>SALTY AUTO PORTAL</span>
+            <span>MY AI TASK PORTAL</span>
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">
             Agency Social Engine
@@ -37,7 +37,7 @@ export default function AuthLayout({
             Meta Tech Provider
           </span>
           <span>•</span>
-          <span>auto.saltymediaproduction.com</span>
+          <span>automate.myaitask.com</span>
         </div>
       </div>
     </div>

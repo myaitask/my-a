@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
 
     const defaultTestMessage =
       messageText?.trim() ||
-      "Welcome to Salty Media Production! What can we help you with today? Tap an option below:";
+      "Welcome to My AI Task! What can we help you with today? Tap an option below:";
 
     // 3. Dispatch via WhatsApp Cloud API (Standard or Interactive Reply Buttons)
     let response;

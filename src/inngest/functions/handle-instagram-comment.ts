@@ -228,7 +228,7 @@ export const handleInstagramComment = inngest.createFunction(
           .replace(/\{name\}/gi, fromUsername);
 
         const appUrl =
-          process.env.NEXT_PUBLIC_APP_URL || "https://auto.saltymediaproduction.com";
+          process.env.NEXT_PUBLIC_APP_URL || "https://automate.myaitask.com";
 
         // Convert each button URL into a tracked short link
         const trackedButtons = await Promise.all(

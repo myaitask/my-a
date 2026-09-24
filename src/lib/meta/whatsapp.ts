@@ -465,7 +465,7 @@ export async function sendWhatsAppMediaCarousel(
 }
 
 /**
- * Sends a Limited-Time Offer (LTO) Template with native copy coupon code button (Jasper's Market BERRIES20/SALTY20 pattern).
+ * Sends a Limited-Time Offer (LTO) Template with native copy coupon code button (Jasper's Market BERRIES20/MYAITASK20 pattern).
  */
 export async function sendWhatsAppLimitedTimeOfferTemplate(
   phoneNumberId: string,

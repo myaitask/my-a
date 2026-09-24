@@ -1,6 +1,6 @@
 # Database Schema Specification
 
-This document details the PostgreSQL schema designed for `salty-auto` inside Supabase. All tables feature **UUID primary keys**, **automatic timestamps**, and **Row-Level Security (RLS)**.
+This document details the PostgreSQL schema designed for `my-a` inside Supabase. All tables feature **UUID primary keys**, **automatic timestamps**, and **Row-Level Security (RLS)**.
 
 ---
 

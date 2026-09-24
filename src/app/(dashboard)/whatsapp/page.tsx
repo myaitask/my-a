@@ -58,25 +58,25 @@ interface WhatsAppRule {
 const JASPERS_MARKET_TEMPLATE = {
   name: "Jasper's Market Concierge Flow",
   keywords: "HI, HELLO, MENU, START, SERVICES, SALTY",
-  replyMessage: "Welcome to Salty Media Production! Choose an option below to get started immediately:",
+  replyMessage: "Welcome to My AI Task! Choose an option below to get started immediately:",
   buttons: [
     {
       id: "btn_services",
       title: "Explore Services",
       reply_text:
-        "Here is what Salty Media offers:\n\n• Video Production & Reels Editing\n• Full-Stack Web & Automation Apps\n• Performance Ad Campaigns & Creatives\n\nWhich service aligns best with your vision?",
+        "Here is what My AI Task offers:\n\n• Video Production & Reels Editing\n• Full-Stack Web & Automation Apps\n• Performance Ad Campaigns & Creatives\n\nWhich service aligns best with your vision?",
     },
     {
       id: "btn_portfolio",
       title: "Portfolio Work",
       reply_text:
-        "Explore our recent high-impact showreels & productions:\n\n🌐 https://saltymediaproduction.com/work\n\nWould you like a tailored quote for your project?",
+        "Explore our recent high-impact showreels & productions:\n\n🌐 https://www.myaitask.com/work\n\nWould you like a tailored quote for your project?",
     },
     {
       id: "btn_promo",
       title: "Claim 20% Promo",
       reply_text:
-        "🎉 Here is your exclusive 20% off voucher code: SALTY20\n\nApply this on your next media production retainer or consultation booking!",
+        "🎉 Here is your exclusive 20% off voucher code: MYAITASK20\n\nApply this on your next media production retainer or consultation booking!",
     },
   ],
 };
@@ -105,7 +105,7 @@ export default function WhatsAppDashboardPage() {
   const [matchType, setMatchType] = useState<"contains" | "exact">("contains");
   const [responseType, setResponseType] = useState<"text" | "interactive_buttons">("interactive_buttons");
   const [replyMessage, setReplyMessage] = useState(
-    "Welcome to Salty Media Production! Choose an option below to get started immediately:"
+    "Welcome to My AI Task! Choose an option below to get started immediately:"
   );
   const [waButtons, setWaButtons] = useState<WhatsAppReplyButtonConfig[]>([
     ...JASPERS_MARKET_TEMPLATE.buttons,
@@ -115,7 +115,7 @@ export default function WhatsAppDashboardPage() {
   const [testModalOpen, setTestModalOpen] = useState(false);
   const [testPhone, setTestPhone] = useState("");
   const [testMsg, setTestMsg] = useState(
-    "Hello from Salty Auto! Your WhatsApp Business Cloud API is active and functioning seamlessly. 🚀"
+    "Hello from My AI Task! Your WhatsApp Business Cloud API is active and functioning seamlessly. 🚀"
   );
   const [testSendInteractive, setTestSendInteractive] = useState(true);
   const [testSending, setTestSending] = useState(false);
@@ -148,8 +148,8 @@ export default function WhatsAppDashboardPage() {
   const [simTyping, setSimTyping] = useState(false);
   const [simFollowUpNotice, setSimFollowUpNotice] = useState(false);
 
-  const webhookUrl = "https://auto.saltymediaproduction.com/api/webhooks/meta";
-  const verifyToken = "salty_media_2026_secure_secret";
+  const webhookUrl = "https://automate.myaitask.com/api/webhooks/meta";
+  const verifyToken = "my_ai_task_2026_secure_secret";
 
   useEffect(() => {
     fetchAccount();
@@ -687,7 +687,7 @@ export default function WhatsAppDashboardPage() {
                 <span>3. Dynamic Voucher & Promo Distribution</span>
               </div>
               <p className="text-xs text-slate-400 pl-6 leading-relaxed">
-                Delivers personalized discount codes (<code className="text-amber-300 font-mono">SALTY20</code>) with automatic contact profiling into Supabase CRM (<code className="text-slate-300 font-mono">choice:btn_promo</code>).
+                Delivers personalized discount codes (<code className="text-amber-300 font-mono">MYAITASK20</code>) with automatic contact profiling into Supabase CRM (<code className="text-slate-300 font-mono">choice:btn_promo</code>).
               </p>
             </div>
 
@@ -712,7 +712,7 @@ export default function WhatsAppDashboardPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-semibold text-xs truncate flex items-center gap-1">
-                    <span>Salty Media Production</span>
+                    <span>My AI Task</span>
                     <CheckCircle2 className="w-3 h-3 text-teal-300 inline shrink-0" />
                   </div>
                   <div className="text-[10px] text-emerald-200">
@@ -829,7 +829,7 @@ export default function WhatsAppDashboardPage() {
             <div>
               <h3 className="text-base font-semibold text-white">No WhatsApp Responders Yet</h3>
               <p className="text-xs text-slate-400 max-w-md mx-auto mt-1">
-                Create your first automated WhatsApp responder bot. When customers message your WhatsApp business number with inquiries or keywords, Salty Auto will instantly qualify them and reply within seconds.
+                Create your first automated WhatsApp responder bot. When customers message your WhatsApp business number with inquiries or keywords, My AI Task will instantly qualify them and reply within seconds.
               </p>
             </div>
             <button
@@ -999,7 +999,7 @@ export default function WhatsAppDashboardPage() {
                   type="text"
                   value={waDisplayName}
                   onChange={(e) => setWaDisplayName(e.target.value)}
-                  placeholder="e.g. Salty Media Support (+91 98811 20025)"
+                  placeholder="e.g. My AI Task Support (+91 98811 20025)"
                   className="w-full bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
                 />
               </div>

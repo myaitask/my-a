@@ -23,7 +23,7 @@ export async function dispatchAutomationEvent(
   const targetDriver = preferredDriver === "auto" ? configuredDriver : preferredDriver;
 
   const qstashToken = process.env.QSTASH_TOKEN;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://auto.saltymediaproduction.com";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://automate.myaitask.com";
 
   // Use QStash if requested and token is available
   if (targetDriver === "qstash" && qstashToken) {

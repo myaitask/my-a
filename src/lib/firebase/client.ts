@@ -1,7 +1,7 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-// Salty Media Production Firebase Configuration
+// My AI Task Firebase Configuration
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyCwRmQs8N-wxaXghy1aeiCPMzNiGOu5xrc",
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "salty-media-production.firebaseapp.com",

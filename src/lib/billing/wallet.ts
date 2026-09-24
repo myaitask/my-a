@@ -38,9 +38,9 @@ export interface WalletBillingState {
 }
 
 const DEFAULT_BUSINESS_DETAILS: BusinessDetails = {
-  businessName: "Salty Media Agency",
+  businessName: "My AI Task Agency",
   contactPerson: "Agency Admin",
-  email: "billing@saltymediaproduction.com",
+  email: "billing@www.myaitask.com",
   phone: "+91 98765 43210",
   taxId: "29AABCS1429B1Z1",
   address: "100 Feet Road, Indiranagar",

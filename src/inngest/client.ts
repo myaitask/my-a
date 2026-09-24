@@ -56,6 +56,6 @@ export type Events = {
 };
 
 export const inngest = new Inngest({
-  id: "salty-auto",
+  id: "my-a",
   schemas: new EventSchemas().fromRecord<Events>(),
 });

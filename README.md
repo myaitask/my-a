@@ -1,4 +1,4 @@
-# Salty Auto — Enterprise Social Media Automation & CRM Platform
+# My AI Task — Enterprise Social Media Automation & CRM Platform
 
 [![Next.js 15](https://img.shields.io/badge/Next.js-15-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
@@ -7,9 +7,9 @@
 [![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Analytics-orange?style=flat&logo=firebase)](https://firebase.google.com/)
 [![Resend](https://img.shields.io/badge/Resend-Transactional%20Email-black?style=flat)](https://resend.com/)
 
-**Salty Auto** is a high-performance, serverless social media automation and messaging platform designed for agencies, creators, and modern businesses. Engineered for zero fixed recurring cost, bank-grade reliability, and anti-ban execution safety.
+**My AI Task** is a high-performance, serverless social media automation and messaging platform designed for agencies, creators, and modern businesses. Engineered for zero fixed recurring cost, bank-grade reliability, and anti-ban execution safety.
 
-Live Portal: [https://auto.saltymediaproduction.com](https://auto.saltymediaproduction.com)
+Live Portal: [https://automate.myaitask.com](https://automate.myaitask.com)
 
 ---
 
@@ -38,7 +38,7 @@ Live Portal: [https://auto.saltymediaproduction.com](https://auto.saltymediaprod
    - Edge middleware route protection.
 
 5. **Transactional Email Engine (Resend)**:
-   - Branded agency onboarding emails (`"Salty Media" <team@saltymediaproduction.com>`).
+   - Branded agency onboarding emails (`"My AI Task" <team@www.myaitask.com>`).
    - Real-time lead capture notification alerts.
 
 ---
@@ -63,8 +63,8 @@ Live Portal: [https://auto.saltymediaproduction.com](https://auto.saltymediaprod
 ### 1. Clone & Install Dependencies
 
 ```bash
-git clone https://github.com/saltymediaproduction/salty-auto.git
-cd salty-auto
+git clone https://github.com/saltymediaproduction/my-a.git
+cd my-a
 npm install
 ```
 
@@ -81,7 +81,7 @@ Fill in your configuration credentials:
 - **Meta**: App ID, App Secret, Verify Token
 - **Inngest**: Event Key, Signing Key
 - **Firebase**: API Key, Project ID, App ID
-- **Resend**: API Key, Sender Email (`team@saltymediaproduction.com`)
+- **Resend**: API Key, Sender Email (`team@www.myaitask.com`)
 - **Cloudinary**: Cloud Name, API Key, API Secret
 
 ### 3. Run Development Server
@@ -122,6 +122,6 @@ Comprehensive architecture specifications, database schemas, and Meta integratio
 
 ## 🏢 License & Credits
 
-Developed by **Salty Media Production**  
-Contact: [team@saltymediaproduction.com](mailto:team@saltymediaproduction.com)  
-Website: [https://saltymediaproduction.com](https://saltymediaproduction.com)
+Developed by **My AI Task**  
+Contact: [team@www.myaitask.com](mailto:team@www.myaitask.com)  
+Website: [https://www.myaitask.com](https://www.myaitask.com)

@@ -155,15 +155,15 @@ export const handleWhatsAppMessage = inngest.createFunction(
 
         // 2. Handle built-in Jasper's Market interactive button selections
         if (interactiveId === "reply-services" || interactiveId === "reply-interactive-with-media") {
-          const body = `🎬 *Salty Media Production Services*\n\n• High-Converting Video Ads & Showreels\n• Instagram & WhatsApp Growth Automation\n• Creator Studio & Viral Storytelling\n\nVisit our full course and workshop hub:\nhttps://saltymediaproduction.com/workshops`;
+          const body = `🎬 *My AI Task Services*\n\n• High-Converting Video Ads & Showreels\n• Instagram & WhatsApp Growth Automation\n• Creator Studio & Viral Storytelling\n\nVisit our full course and workshop hub:\nhttps://www.myaitask.com/workshops`;
           await sendWhatsAppTextMessage(phoneNumberId, from, body, account.access_token);
           followUpEnabled = true;
         } else if (interactiveId === "reply-portfolio" || interactiveId === "reply-media-card-carousel") {
-          const body = `🌟 *Featured Client Production Showcase*\n\nExplore our latest commercial reels, masterclass highlights, and creative case studies:\nhttps://saltymediaproduction.com/courses\n\nReply 'CALL' to schedule a 1-on-1 strategy session with our director.`;
+          const body = `🌟 *Featured Client Production Showcase*\n\nExplore our latest commercial reels, masterclass highlights, and creative case studies:\nhttps://www.myaitask.com/courses\n\nReply 'CALL' to schedule a 1-on-1 strategy session with our director.`;
           await sendWhatsAppTextMessage(phoneNumberId, from, body, account.access_token);
           followUpEnabled = true;
         } else if (interactiveId === "reply-offer") {
-          const body = `🎁 *Exclusive Limited-Time Offer*\n\nUse voucher code *SALTY20* to get 20% off your first month creative retainer or masterclass booking!\n\nRedeem now: https://saltymediaproduction.com\n_Valid for the next 48 hours._`;
+          const body = `🎁 *Exclusive Limited-Time Offer*\n\nUse voucher code *MYAITASK20* to get 20% off your first month creative retainer or masterclass booking!\n\nRedeem now: https://www.myaitask.com\n_Valid for the next 48 hours._`;
           await sendWhatsAppTextMessage(phoneNumberId, from, body, account.access_token);
           followUpEnabled = true;
         } else {
@@ -247,7 +247,7 @@ export const handleWhatsAppMessage = inngest.createFunction(
 
         if (isGreeting) {
           await step.run("send-jaspers-interactive-menu", async () => {
-            const welcomeText = `Welcome to *Salty Media Production*! 🎬\n\nWhat can we help you with today? Tap an option below:`;
+            const welcomeText = `Welcome to *My AI Task*! 🎬\n\nWhat can we help you with today? Tap an option below:`;
             await sendWhatsAppInteractiveButtons(
               phoneNumberId,
               from,
@@ -261,7 +261,7 @@ export const handleWhatsAppMessage = inngest.createFunction(
         } else {
           // Default friendly concierge response
           await step.run("send-default-concierge", async () => {
-            const defaultText = `Hi ${profileName || "there"}! 🌟 Thanks for contacting Salty Media Production.\n\nReply 'MENU' to view our interactive services, or let us know what creative project you're planning!`;
+            const defaultText = `Hi ${profileName || "there"}! 🌟 Thanks for contacting My AI Task.\n\nReply 'MENU' to view our interactive services, or let us know what creative project you're planning!`;
             await sendWhatsAppTextMessage(
               phoneNumberId,
               from,

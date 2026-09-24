@@ -2,7 +2,7 @@ const crypto = require('crypto');
 
 async function testWebhook() {
   const secret = process.env.META_APP_SECRET || 'test_secret_or_real';
-  const url = 'https://auto.saltymediaproduction.com/api/webhooks/meta';
+  const url = 'https://automate.myaitask.com/api/webhooks/meta';
   
   const payload = {
     object: "whatsapp_business_account",

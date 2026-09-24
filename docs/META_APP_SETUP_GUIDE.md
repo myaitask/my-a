@@ -1,18 +1,18 @@
 # Meta App Setup Guide
 
-This document tracks the configuration, rules, and strategies for our Meta Developer Apps and WhatsApp phone numbers as we build out the Interakt-like platform for Salty Media Production.
+This document tracks the configuration, rules, and strategies for our Meta Developer Apps and WhatsApp phone numbers as we build out the Interakt-like platform for My AI Task.
 
 ## Meta App Strategy: Two-Phase Approach
 
-We are building this platform for the official company (Salty Media Production opc Pvt Ltd). We have two Meta apps:
-1. **Salty Media Production (App)**: Connected to a personal business portfolio. Contains a dedicated, unused mobile number.
+We are building this platform for the official company (My AI Task opc Pvt Ltd). We have two Meta apps:
+1. **My AI Task (App)**: Connected to a personal business portfolio. Contains a dedicated, unused mobile number.
 2. **Salty Agent (App)**: Connected to the official company Facebook Page and Business Manager. Currently, the phone number here is active on a physical mobile device.
 
 ### Current Phase: Sandbox Testing (Phase 1)
-To test the code (Live Inbox, Webhooks, CRM) quickly and without disrupting active mobile devices, we are using the **Salty Media Production** app as a sandbox.
-- **Webhook Target**: `https://auto.saltymediaproduction.com/api/webhooks/meta` (or local ngrok proxy).
-- **Callback Location**: Added to the *Salty Media Production* Meta App.
-- **Phone Number**: The dedicated number currently in the *Salty Media Production* app.
+To test the code (Live Inbox, Webhooks, CRM) quickly and without disrupting active mobile devices, we are using the **My AI Task** app as a sandbox.
+- **Webhook Target**: `https://automate.myaitask.com/api/webhooks/meta` (or local ngrok proxy).
+- **Callback Location**: Added to the *My AI Task* Meta App.
+- **Phone Number**: The dedicated number currently in the *My AI Task* app.
 
 ### Final Launch Phase (Phase 2)
 When the platform is verified, robust, and ready for official launch, we will transition everything to the **Salty Agent** Meta App.
@@ -20,7 +20,7 @@ When the platform is verified, robust, and ready for official launch, we will tr
 - **Callback Location**: Will be added to the *Salty Agent* Meta App.
 - **Phone Number Strategy**: We must provide a clean phone number for the *Salty Agent* app. This can be achieved by:
   1. Buying a new cheap SIM/virtual number for the *Salty Agent* account.
-  2. Deleting the dedicated number from the *Salty Media Production* app and moving it to the *Salty Agent* app.
+  2. Deleting the dedicated number from the *My AI Task* app and moving it to the *Salty Agent* app.
   3. Or, completely deleting the WhatsApp account from the physical mobile device and using that number for the API.
 
 ## The Golden Rule of WhatsApp Phone Numbers

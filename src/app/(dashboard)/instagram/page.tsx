@@ -157,11 +157,11 @@ export default function InstagramSuitePage() {
   );
   const [followButtonLabel, setFollowButtonLabel] = useState("I'm Following! Unlock Link");
   const [buttons, setButtons] = useState<AutomationButton[]>([
-    { title: "Get Instant Access", url: "https://saltymediaproduction.com" },
+    { title: "Get Instant Access", url: "https://www.myaitask.com" },
   ]);
 
-  const webhookUrl = "https://auto.saltymediaproduction.com/api/webhooks/meta";
-  const verifyToken = "salty_media_2026_secure_secret";
+  const webhookUrl = "https://automate.myaitask.com/api/webhooks/meta";
+  const verifyToken = "my_ai_task_2026_secure_secret";
 
   useEffect(() => {
     fetchAccount();
@@ -302,7 +302,7 @@ export default function InstagramSuitePage() {
 
   const handleAddButton = () => {
     if (buttons.length >= 3) return;
-    setButtons([...buttons, { title: "Explore Link", url: "https://saltymediaproduction.com" }]);
+    setButtons([...buttons, { title: "Explore Link", url: "https://www.myaitask.com" }]);
   };
 
   const handleRemoveButton = (index: number) => {
@@ -1380,7 +1380,7 @@ export default function InstagramSuitePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-xs text-white truncate">
-                        {instagramAccount?.account_name || "Salty Media"}
+                        {instagramAccount?.account_name || "My AI Task"}
                       </div>
                       <div className="text-[10px] text-pink-400">Instagram Direct</div>
                     </div>

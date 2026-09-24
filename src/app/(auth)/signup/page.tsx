@@ -173,7 +173,7 @@ export default function SignupPage() {
             <input
               type="text"
               required
-              placeholder="Salty Media Production"
+              placeholder="My AI Task"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
               className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 transition-all"
@@ -190,7 +190,7 @@ export default function SignupPage() {
             <input
               type="email"
               required
-              placeholder="trishul@saltymediaproduction.com"
+              placeholder="trishul@www.myaitask.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 transition-all"
