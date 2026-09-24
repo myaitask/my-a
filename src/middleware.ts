@@ -50,13 +50,18 @@ export async function middleware(request: NextRequest) {
   if (!user && !isAuthPage) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
-    return NextResponse.redirect(url);
-  }
-
-  if (user && isAuthPage) {
+    supabaseResponse = NextResponse.redirect(url);
+  } else if (user && isAuthPage) {
     const url = request.nextUrl.clone();
     url.pathname = "/";
-    return NextResponse.redirect(url);
+    supabaseResponse = NextResponse.redirect(url);
+  }
+
+  // Ensure legacy API routes that expect salty_uid continue to work
+  if (user) {
+    supabaseResponse.cookies.set("salty_uid", user.id, { path: "/" });
+  } else {
+    supabaseResponse.cookies.delete("salty_uid");
   }
 
   return supabaseResponse;

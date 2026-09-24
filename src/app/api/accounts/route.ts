@@ -5,13 +5,32 @@ import { createAdminClient } from "@/lib/supabase/admin";
 export async function GET() {
   try {
     const cookieStore = await cookies();
-    const uid = cookieStore.get("salty_uid")?.value;
+    // Support both new Supabase auth and legacy salty_uid
+    const supabase = createAdminClient();
+    
+    // Check legacy cookie first
+    let uid = cookieStore.get("salty_uid")?.value;
+    
+    if (!uid) {
+      // Fallback to checking the actual Supabase session (standard approach)
+      const { createServerClient } = await import("@supabase/ssr");
+      const userClient = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+          cookies: {
+            getAll() { return cookieStore.getAll(); },
+            setAll() {}
+          }
+        }
+      );
+      const { data } = await userClient.auth.getUser();
+      uid = data.user?.id;
+    }
 
     if (!uid) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-
-    const supabase = createAdminClient();
 
     // 1. Get workspace for this user
     const { data: workspace } = await supabase
@@ -46,7 +65,25 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const cookieStore = await cookies();
-    const uid = cookieStore.get("salty_uid")?.value;
+    // Support both new Supabase auth and legacy salty_uid
+    let uid = cookieStore.get("salty_uid")?.value;
+
+    if (!uid) {
+      // Fallback to checking the actual Supabase session (standard approach)
+      const { createServerClient } = await import("@supabase/ssr");
+      const userClient = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+          cookies: {
+            getAll() { return cookieStore.getAll(); },
+            setAll() {}
+          }
+        }
+      );
+      const { data } = await userClient.auth.getUser();
+      uid = data.user?.id;
+    }
 
     if (!uid) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -126,7 +163,25 @@ export async function POST(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   try {
     const cookieStore = await cookies();
-    const uid = cookieStore.get("salty_uid")?.value;
+    // Support both new Supabase auth and legacy salty_uid
+    let uid = cookieStore.get("salty_uid")?.value;
+
+    if (!uid) {
+      // Fallback to checking the actual Supabase session (standard approach)
+      const { createServerClient } = await import("@supabase/ssr");
+      const userClient = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+          cookies: {
+            getAll() { return cookieStore.getAll(); },
+            setAll() {}
+          }
+        }
+      );
+      const { data } = await userClient.auth.getUser();
+      uid = data.user?.id;
+    }
 
     if (!uid) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
