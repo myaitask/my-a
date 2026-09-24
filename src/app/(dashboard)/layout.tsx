@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { firebaseAuth } from "@/lib/firebase/client";
+import { createBrowserClient } from "@supabase/ssr";
 import {
   Sparkles,
   Instagram,
@@ -27,20 +26,34 @@ export default function DashboardLayout({
   const router = useRouter();
   const [userEmail, setUserEmail] = useState<string | null>(null);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(firebaseAuth, (user) => {
-      if (user) {
-        setUserEmail(user.email || user.displayName || "Agency User");
-      }
-    });
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
 
-    return () => unsubscribe();
-  }, []);
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUserEmail(user.email || "Agency User");
+      }
+    };
+    fetchUser();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (session?.user) {
+          setUserEmail(session.user.email || "Agency User");
+        }
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, [supabase]);
 
   const handleLogout = async () => {
     try {
-      await signOut(firebaseAuth);
-      await fetch("/api/auth/session", { method: "DELETE" });
+      await supabase.auth.signOut();
       router.push("/login");
       router.refresh();
     } catch (err) {

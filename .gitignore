@@ -29,3 +29,4 @@
 next-env.d.ts
 
 /salty-auto/docs/*
+.env*

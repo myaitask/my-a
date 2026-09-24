@@ -1,47 +1,69 @@
+import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  let supabaseResponse = NextResponse.next({
+    request,
+  });
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet: { name: string; value: string; options: any }[]) {
+          cookiesToSet.forEach(({ name, value, options }) =>
+            request.cookies.set(name, value)
+          );
+          supabaseResponse = NextResponse.next({
+            request,
+          });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          );
+        },
+      },
+    }
+  );
+
   const { pathname } = request.nextUrl;
 
-  // 1. Completely bypass authentication for Webhooks, Queue workers, Auth APIs, and static files
   if (
     pathname.startsWith("/api/webhooks") ||
     pathname.startsWith("/api/inngest") ||
     pathname.startsWith("/api/auth") ||
-    pathname.startsWith("/auth") ||
-    pathname.startsWith("/r/") ||
     pathname.startsWith("/_next") ||
-    pathname.includes(".") // Static assets (favicon, images, etc.)
+    pathname.includes(".")
   ) {
-    return NextResponse.next();
+    return supabaseResponse;
   }
 
-  // Check Firebase session cookie
-  const isAuthenticated = request.cookies.get("salty_auth")?.value === "true";
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const isAuthPage = pathname === "/login" || pathname === "/signup";
 
-  // 2. Unauthenticated user trying to access protected dashboard routes
-  if (!isAuthenticated && !isAuthPage) {
-    if (pathname.startsWith("/api/")) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-    const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/login";
-    return NextResponse.redirect(redirectUrl);
+  if (!user && !isAuthPage) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    return NextResponse.redirect(url);
   }
 
-  // 3. Authenticated user trying to access login/signup pages
-  if (isAuthenticated && isAuthPage) {
-    const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/";
-    return NextResponse.redirect(redirectUrl);
+  if (user && isAuthPage) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
+    return NextResponse.redirect(url);
   }
 
-  return NextResponse.next();
+  return supabaseResponse;
 }
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };
